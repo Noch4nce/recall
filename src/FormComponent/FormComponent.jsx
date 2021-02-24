@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Input, Space, Card } from 'antd';
 
 export default class FormComponent extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-       input: '',
-       items: []
-    }
+      input: '',
+      items: [],
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,33 +16,37 @@ export default class FormComponent extends Component {
 
   handleChange = (event) => {
     this.setState({
-      input: event.target.value
-    })
-  }
+      input: event.target.value,
+    });
+  };
 
   handleSubmit = (event) => {
     console.log(this.state.items);
-    event.preventDefault();
+    // event.preventDefault();
     this.setState({
       items: [...this.state.items, this.state.input],
       input: '',
-    })
-  }
-  
+    });
+  };
+
   render() {
+    const { Search } = Input;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={this.state.input} />
-          <button type='submit'>Submit</button>
-        </form>
-        
-        <ul>
-          {this.state.items.map((item, index) => (
-            <li style={{fontWeight: 'bold'}} key={index}>{item}</li>
-          ))}
-        </ul>
+        <Space >
+          <Search enterButton="Search" onSearch={this.handleSubmit} onChange={this.handleChange} value={this.state.input}/>
+        </Space>
+
+        <div className={'card_content'}>
+          <Card title="Card title" bordered={false} style={{ width: 300 }}>
+            {this.state.items.map((item, index) => (
+              <p style={{ fontWeight: 'bold' }} key={index}>
+                {item}
+              </p>
+            ))}
+          </Card>
+        </div>
       </div>
-    )
+    );
   }
 }
