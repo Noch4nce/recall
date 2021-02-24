@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css';
 import CountComponent from './CountComponent/CountComponent';
+import FormComponent from './FormComponent/FormComponent';
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <main>
         <section>
           <CountComponent />
+          <FormComponent />
         </section>
       </main>
     </div>

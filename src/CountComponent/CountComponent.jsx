@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'antd';
 
 export default class CountComponent extends Component {
   constructor(props) {
@@ -35,9 +36,9 @@ export default class CountComponent extends Component {
     return (
       <div>
         <h1>Current: {this.state.count}</h1>
-        <button onClick={this.increase}>Increase</button>
-        <button onClick={this.decrease} style={{margin: 5}}>Decrease</button>
-        <button onClick={this.reset}>Reset</button>
+        <Button onClick={this.increase}>Increase</Button>
+        <Button onClick={this.decrease} style={{margin: 5}}>Decrease</Button>
+        <Button onClick={this.reset}>Reset</Button>
       </div>
     )
   }
