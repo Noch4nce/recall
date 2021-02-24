@@ -3,6 +3,7 @@ import './App.css';
 import 'antd/dist/antd.css';
 import CountComponent from './CountComponent/CountComponent';
 import FormComponent from './FormComponent/FormComponent';
+import TransferComponent from './TransferComponent/TransferComponent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <section>
           <CountComponent />
           <FormComponent />
+          <TransferComponent />
         </section>
       </main>
     </div>
