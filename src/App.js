@@ -5,6 +5,7 @@ import CountComponent from './CountComponent/CountComponent';
 import FormComponent from './FormComponent/FormComponent';
 import TransferComponent from './TransferComponent/TransferComponent';
 import FetchComponent from './FetchComponent/FetchComponent';
+import MainComponent from './MainComponent/MainComponent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       </header>
       <main>
         <section>
+          <MainComponent />
           <CountComponent />
           <FormComponent />
           <TransferComponent />
